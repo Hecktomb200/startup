@@ -2,3 +2,4 @@
 This change is from the local environment!
 This change is from GitHub itself.
 This conflicting change is from the local environment
+This is a conflicting change with VS code.
