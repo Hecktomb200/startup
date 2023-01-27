@@ -19,3 +19,5 @@ Key Features:
   Red/Blue crosses (in respect to which player it is) over checker pieces that will be eliminated at the end of the turn
   Tallied scores based on pieces eliminated or victory that can be viewed later by other players (organized by match, not total scores)
   Login page to enter your account and save your scores for bragging rights
+![Example1](https://drive.google.com/file/d/1s_QRBi_fatRnca-A3PBFx6td-GBFcxc7/view?usp=share_link)
+![Example2](https://drive.google.com/file/d/1salNEYrTFgqArBhSEch7K3o7ysr8PpIi/view?usp=share_link)
