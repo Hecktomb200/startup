@@ -10,6 +10,7 @@ Although I had previously known about local to GitHub repository work, I somehow
 
 
 For my idea I want to create an interactive version of checkers that includes a chess-clock which is playable by two different players, or possibly Player vs. AI. The checker pieces will lift up and place down on the board as the user selects them, and when selected will highlight the options they can take. If the user wishes to undo a move they made, they can simply place the checker piece back or hit the interactive UNDO arrow button to reverse their choice. Until they hit the clock on their side, their turn is not over. The other user/AI will notice the changes take effect once the user's turn is completed, and the board is updated.
+
 Key Features:
   Interactive chess-clock which will tick down over time until time has run out
   Checker pieces will pick up and place down as the user moves them
