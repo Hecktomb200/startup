@@ -20,4 +20,4 @@ Key Features:
   Tallied scores based on pieces eliminated or victory that can be viewed later by other players (organized by match, not total scores)
   Login page to enter your account and save your scores for bragging rights
 ![Example1](https://github.com/Hecktomb200/startup/blob/main/20230127_140851.jpg)
-![Example2]()
+![Example2](https://github.com/Hecktomb200/startup/blob/main/20230127_140928.jpg)
