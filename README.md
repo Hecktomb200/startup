@@ -21,3 +21,7 @@ Key Features:
   Login page to enter your account and save your scores for bragging rights
 ![Example1](https://github.com/Hecktomb200/startup/blob/main/20230127_140851.jpg)
 ![Example2](https://github.com/Hecktomb200/startup/blob/main/20230127_140928.jpg)
+
+
+# 2/8/23: Simon
+When creating (recreating) Simon, I found that although I unfortunately had to use a lot of the same materials as were given to us in the original copy of Simon, there were some key parts I could alter to my own liking without too much difficulty. I also attempted to change the index.html to home.html instead, however unfortunately something with the deployFiles.sh or somewhere else made this difficult for the web environment to process. For now it's been changed back to index.html, however I hope at some point to be able to update this.
