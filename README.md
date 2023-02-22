@@ -25,3 +25,6 @@ Key Features:
 
 # 2/8/23: Simon
 When creating (recreating) Simon, I found that although I unfortunately had to use a lot of the same materials as were given to us in the original copy of Simon, there were some key parts I could alter to my own liking without too much difficulty. I also attempted to change the index.html to home.html instead, however unfortunately something with the deployFiles.sh or somewhere else made this difficult for the web environment to process. For now it's been changed back to index.html, however I hope at some point to be able to update this.
+
+# 2/21/23: Simon CSS
+While adding the CSS visuals into Simon via Bootstrap, I got to better play with the bootstrap controls built in. Although some controls seem convoluted or even difficult to input, for the most part Bootstrap makes the process rather simplified in adjusting individual and group targets by simply putting everything into separate classes. In short, it feels like you put everything into a separate class so that you can either adjust it apart, or together with other items in other classes. A little tedious in moments, but a great way to make things easier down the road.
