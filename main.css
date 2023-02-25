@@ -9,7 +9,7 @@ body {
   }
   
   main {
-    background-color:gray;
+    background-color:grey;
     flex: 1 calc(100vh - 110px);
     display: flex;
     flex-direction: column;
