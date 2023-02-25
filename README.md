@@ -28,3 +28,6 @@ When creating (recreating) Simon, I found that although I unfortunately had to u
 
 # 2/21/23: Simon CSS
 While adding the CSS visuals into Simon via Bootstrap, I got to better play with the bootstrap controls built in. Although some controls seem convoluted or even difficult to input, for the most part Bootstrap makes the process rather simplified in adjusting individual and group targets by simply putting everything into separate classes. In short, it feels like you put everything into a separate class so that you can either adjust it apart, or together with other items in other classes. A little tedious in moments, but a great way to make things easier down the road.
+
+# 2/24/23: Startup HTML & CSS
+As I began to plan out how to make my startup webpages look, I realized that the model I made when creating the Simon webpage was incredibly similar to my original design (drawing) that I had of the websites layout. Due to that, I took much of my work from my Simon project and began to make adjustments to implement it into my startup. After many adjustments to things I didn't originally like in my Simon project as well as additions of some new content I wanted to incorporate, I'm much happier with this final design of my Startup in comparison to the Simon project.
