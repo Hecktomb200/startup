@@ -34,6 +34,16 @@ body {
     align-items: center;
     justify-content: space-around;
   }
+
+  mainscores {
+    background: url(https://th.bing.com/th/id/R.a256a34de0ddf49c2582bf257c946be3?rik=A0KhByMlknUX%2bg&riu=http%3a%2f%2fyesofcorsa.com%2fwp-content%2fuploads%2f2017%2f04%2fCheckers-Wallpaper.jpg&ehk=Y2ZrWHBls0JGjFykJ2%2b1omapI81XAcbk%2f%2b8OkZvUNEU%3d&risl=&pid=ImgRaw&r=0);
+    background-size: cover;
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
   
   footer {
     flex: 0 30px;
