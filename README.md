@@ -31,3 +31,6 @@ While adding the CSS visuals into Simon via Bootstrap, I got to better play with
 
 # 2/24/23: Startup HTML & CSS
 As I began to plan out how to make my startup webpages look, I realized that the model I made when creating the Simon webpage was incredibly similar to my original design (drawing) that I had of the websites layout. Due to that, I took much of my work from my Simon project and began to make adjustments to implement it into my startup. After many adjustments to things I didn't originally like in my Simon project as well as additions of some new content I wanted to incorporate, I'm much happier with this final design of my Startup in comparison to the Simon project.
+
+# 3/6/23: Simon JS
+Adding JS into the simon project was by far the best way to actually learn what each part of the javascript did, and yet it felt incredibly difficult to apply. By far my weakest point as of yet, I'll have to figure out how to best apply this to the startup project and spend some time testing prior to actually implementing. Even so, I'm still incredibly pleased to see the Simon game properly working, as well as the login and scoreboard functioning. Overall this has been a blast to apply and see finished.
