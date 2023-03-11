@@ -65,3 +65,43 @@ const board = [
 	null
 ];
 
+let findPiece = (pieceId) => {
+	let parsed = parseInt(pieceId);
+	return board.indexOf(parsed);
+};
+
+const cells = document.querySelectorAll(".boardSquare"),
+	gameOverText = document.querySelector(".game-over");
+let redsPieces = document.querySelectorAll("p");
+let blacksPieces = document.querySelectorAll("span");
+
+let turn = true;
+let redScore = 12;
+let blackScore = 12;
+let playerPieces;
+
+let selectedPiece = {
+	pieceId: -1,
+	indexOfBoardPiece: -1,
+	isKing: false,
+	seventhSpace: false,
+	ninthSpace: false,
+	fourteenthSpace: false,
+	eighteenthSpace: false,
+	minusSeventhSpace: false,
+	minusNinthSpace: false,
+	minusFourteenthSpace: false,
+	minusEighteenthSpace: false
+};
+
+const givePiecesEventListeners = () => {
+	if (turn) {
+		for (let i = 0; i < redsPieces.length; i++) {
+			redsPieces[i].addEventListener("click", getPlayerPieces);
+		}
+	} else {
+		for (let i = 0; i < blacksPieces.length; i++) {
+			blacksPieces[i].addEventListener("click", getPlayerPieces);
+		}
+	}
+};
