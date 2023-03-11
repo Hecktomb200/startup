@@ -278,3 +278,130 @@ const checkAvailableJumpSpaces = () => {
 	}
 	checkPieceConditions();
 };
+
+const checkPieceConditions = () => {
+	if (selectedPiece.isKing) {
+		givePieceBorder();
+	} else {
+		if (turn) {
+			selectedPiece.minusSeventhSpace = false;
+			selectedPiece.minusNinthSpace = false;
+			selectedPiece.minusFourteenthSpace = false;
+			selectedPiece.minusEighteenthSpace = false;
+		} else {
+			selectedPiece.seventhSpace = false;
+			selectedPiece.ninthSpace = false;
+			selectedPiece.fourteenthSpace = false;
+			selectedPiece.eighteenthSpace = false;
+		}
+		givePieceBorder();
+	}
+};
+
+const givePieceBorder = () => {
+	if (
+		selectedPiece.seventhSpace ||
+		selectedPiece.ninthSpace ||
+		selectedPiece.fourteenthSpace ||
+		selectedPiece.eighteenthSpace ||
+		selectedPiece.minusSeventhSpace ||
+		selectedPiece.minusNinthSpace ||
+		selectedPiece.minusFourteenthSpace ||
+		selectedPiece.minusEighteenthSpace
+	) {
+		document.getElementById(selectedPiece.pieceId).style.border =
+			"2px solid white";
+		giveCellsClick();
+	} else {
+		return;
+	}
+};
+
+const giveCellsClick = () => {
+	if (selectedPiece.seventhSpace) {
+		cells[selectedPiece.indexOfBoardPiece + 7].setAttribute(
+			"onclick",
+			"makeMove(7)"
+		);
+	}
+	if (selectedPiece.ninthSpace) {
+		cells[selectedPiece.indexOfBoardPiece + 9].setAttribute(
+			"onclick",
+			"makeMove(9)"
+		);
+	}
+	if (selectedPiece.fourteenthSpace) {
+		cells[selectedPiece.indexOfBoardPiece + 14].setAttribute(
+			"onclick",
+			"makeMove(14)"
+		);
+	}
+	if (selectedPiece.eighteenthSpace) {
+		cells[selectedPiece.indexOfBoardPiece + 18].setAttribute(
+			"onclick",
+			"makeMove(18)"
+		);
+	}
+	if (selectedPiece.minusSeventhSpace) {
+		cells[selectedPiece.indexOfBoardPiece - 7].setAttribute(
+			"onclick",
+			"makeMove(-7)"
+		);
+	}
+	if (selectedPiece.minusNinthSpace) {
+		cells[selectedPiece.indexOfBoardPiece - 9].setAttribute(
+			"onclick",
+			"makeMove(-9)"
+		);
+	}
+	if (selectedPiece.minusFourteenthSpace) {
+		cells[selectedPiece.indexOfBoardPiece - 14].setAttribute(
+			"onclick",
+			"makeMove(-14)"
+		);
+	}
+	if (selectedPiece.minusEighteenthSpace) {
+		cells[selectedPiece.indexOfBoardPiece - 18].setAttribute(
+			"onclick",
+			"makeMove(-18)"
+		);
+	}
+};
+
+const makeMove = (number) => {
+	document.getElementById(selectedPiece.pieceId).remove();
+	cells[selectedPiece.indexOfBoardPiece].innerHTML = "";
+	if (turn) {
+		if (selectedPiece.isKing) {
+			cells[
+				selectedPiece.indexOfBoardPiece + number
+			].innerHTML = `<p class="red-piece king" id="${selectedPiece.pieceId}"></p>`;
+			redsPieces = document.querySelectorAll("p");
+		} else {
+			cells[
+				selectedPiece.indexOfBoardPiece + number
+			].innerHTML = `<p class="red-piece" id="${selectedPiece.pieceId}"></p>`;
+			redsPieces = document.querySelectorAll("p");
+		}
+	} else {
+		if (selectedPiece.isKing) {
+			cells[
+				selectedPiece.indexOfBoardPiece + number
+			].innerHTML = `<span class="black-piece king" id="${selectedPiece.pieceId}"></span>`;
+			blacksPieces = document.querySelectorAll("span");
+		} else {
+			cells[
+				selectedPiece.indexOfBoardPiece + number
+			].innerHTML = `<span class="black-piece" id="${selectedPiece.pieceId}"></span>`;
+			blacksPieces = document.querySelectorAll("span");
+		}
+	}
+
+	let indexOfPiece = selectedPiece.indexOfBoardPiece;
+	if (number === 14 || number === -14 || number === 18 || number === -18) {
+		changeData(indexOfPiece, indexOfPiece + number, indexOfPiece + number / 2);
+	} else {
+		changeData(indexOfPiece, indexOfPiece + number);
+	}
+};
+
