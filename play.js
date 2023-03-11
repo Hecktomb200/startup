@@ -442,19 +442,24 @@ const removeEventListeners = () => {
 	}
 	checkForWinner();
 };
-const checkForWinner = (userName, score, scores) => {
+const checkForWinner = (score) => {
 	if (blackScore === 0) {
 		gameOverText.innerHTML =
 			'<p>GAME OVER! <br><span style="color: red">RED</span> WINS!</p><button class="reload">Play Again!</button>';
 		document.querySelector(".overlay").style.visibility = "visible";
 		document.querySelector(".reload").addEventListener("click", () => {
 			window.location.reload(true);
-            localStorage.getItem('userName') ?? 'Mystery player';
+            const userName = localStorage.getItem('userName') ?? 'Mystery player';
+            let scores = [];
+            const scoresText = localStorage.getItem('scores');
+            if (scoresText) {
+                scores = JSON.parse(scoresText);
+            }
             const date = new Date().toLocaleDateString();
             const score = 'loss';
             const newScore = { name: userName, score: score, date: date};
             scores.push(newScore);
-            return scores;
+            localStorage.setItem('scores', JSON.stringify(scores));
 		});
 	} else if (redScore === 0) {
 		document.querySelector(".overlay").style.visibility = "visible";
@@ -463,11 +468,16 @@ const checkForWinner = (userName, score, scores) => {
 		document.querySelector(".reload").addEventListener("click", () => {
 			window.location.reload(true);
             localStorage.getItem('userName') ?? 'Mystery player';
+            let scores = [];
+            const scoresText = localStorage.getItem('scores');
+            if (scoresText) {
+                scores = JSON.parse(scoresText);
+            }
             const date = new Date().toLocaleDateString();
             const score = 'win';
             const newScore = { name: userName, score: score, date: date};
             scores.push(newScore);
-            return scores;
+            localStorage.setItem('scores', JSON.stringify(scores));
 		});
 	}
 

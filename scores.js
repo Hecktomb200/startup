@@ -27,7 +27,7 @@ function loadScores() {
       }
     } else {
       tableBodyEl.innerHTML = 
-      '<tr><td colSpan=4>Go kill it! Your score will show up here.</td></tr>';
+      '<tr><td colSpan=4>This is a work in progress. Go kill it!</td></tr>';
     }
   }
   loadScores();
