@@ -18,7 +18,7 @@ body {
   }
 
   mainindex {
-    background: url(https://th.bing.com/th/id/R.5a42971aa9ed506c665f7a822d7b7d32?rik=t9sRs15hx45avQ&pid=ImgRaw&r=0);
+    background: url(backgroundimage1.jpg);
     flex: 1 calc(100vh - 110px);
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ body {
   }
 
   mainabout {
-    background: url(https://th.bing.com/th/id/R.e9887040c898a1ea0f2824c11ce92ccf?rik=nmgxi0YaGiwetw&riu=http%3a%2f%2fphotos.demandstudios.com%2fgetty%2farticle%2f83%2f97%2f177762856.jpg&ehk=gVOtwy0vwHmrSLLfOZHx43ynXzSRvxkKhM3CEm8eAwE%3d&risl=&pid=ImgRaw&r=0);
+    background: url(backgroundimage2.jpg);
     flex: 1 calc(100vh - 110px);
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ body {
   }
 
   mainscores {
-    background: url(https://th.bing.com/th/id/R.a256a34de0ddf49c2582bf257c946be3?rik=A0KhByMlknUX%2bg&riu=http%3a%2f%2fyesofcorsa.com%2fwp-content%2fuploads%2f2017%2f04%2fCheckers-Wallpaper.jpg&ehk=Y2ZrWHBls0JGjFykJ2%2b1omapI81XAcbk%2f%2b8OkZvUNEU%3d&risl=&pid=ImgRaw&r=0);
+    background: url(backgroundimage3.jpg);
     background-size: cover;
     flex: 1 calc(100vh - 110px);
     display: flex;
