@@ -405,3 +405,72 @@ const makeMove = (number) => {
 	}
 };
 
+const changeData = (indexOfBoardPiece, modifiedIndex, removePiece) => {
+	board[indexOfBoardPiece] = null;
+	board[modifiedIndex] = parseInt(selectedPiece.pieceId);
+	if (turn && selectedPiece.pieceId < 12 && modifiedIndex >= 57) {
+		document.getElementById(selectedPiece.pieceId).classList.add("king");
+	}
+	if (turn === false && selectedPiece.pieceId >= 12 && modifiedIndex <= 7) {
+		document.getElementById(selectedPiece.pieceId).classList.add("king");
+	}
+	if (removePiece) {
+		board[removePiece] = null;
+		if (turn && selectedPiece.pieceId < 12) {
+			cells[removePiece].innerHTML = "";
+			blackScore--;
+		}
+		if (turn === false && selectedPiece.pieceId >= 12) {
+			cells[removePiece].innerHTML = "";
+			redScore--;
+		}
+	}
+	resetSelectedPieceProperties();
+	removeCellOnClick();
+	removeEventListeners();
+};
+
+const removeEventListeners = () => {
+	if (turn) {
+		for (let i = 0; i < redsPieces.length; i++) {
+			redsPieces[i].removeEventListener("click", getPlayerPieces);
+		}
+	} else {
+		for (let i = 0; i < blacksPieces.length; i++) {
+			blacksPieces[i].removeEventListener("click", getPlayerPieces);
+		}
+	}
+	checkForWinner();
+};
+const checkForWinner = () => {
+	if (blackScore === 0) {
+		gameOverText.innerHTML =
+			'<p>GAME OVER! <br><span style="color: red">RED</span> WINS!</p><button class="reload">Play Again!</button>';
+		document.querySelector(".overlay").style.visibility = "visible";
+		document.querySelector(".reload").addEventListener("click", () => {
+			window.location.reload(true);
+		});
+	} else if (redScore === 0) {
+		document.querySelector(".overlay").style.visibility = "visible";
+		gameOverText.innerHTML =
+			'<p>GAME OVER! <br><span style="color: black">BLACK</span> WINS!</p><button class="reload">Play Again!</button>';
+		document.querySelector(".reload").addEventListener("click", () => {
+			window.location.reload(true);
+		});
+	}
+
+	changeTurns();
+};
+
+const changeTurns = () => {
+	if (turn) {
+		turn = false;
+		document.querySelector(".turn").textContent = "black turn";
+	} else {
+		document.querySelector(".turn").textContent = "red turn";
+		turn = true;
+	}
+	givePiecesEventListeners();
+};
+
+givePiecesEventListeners();
