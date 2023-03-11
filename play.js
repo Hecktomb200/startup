@@ -442,13 +442,19 @@ const removeEventListeners = () => {
 	}
 	checkForWinner();
 };
-const checkForWinner = () => {
+const checkForWinner = (userName, score, scores) => {
 	if (blackScore === 0) {
 		gameOverText.innerHTML =
 			'<p>GAME OVER! <br><span style="color: red">RED</span> WINS!</p><button class="reload">Play Again!</button>';
 		document.querySelector(".overlay").style.visibility = "visible";
 		document.querySelector(".reload").addEventListener("click", () => {
 			window.location.reload(true);
+            localStorage.getItem('userName') ?? 'Mystery player';
+            const date = new Date().toLocaleDateString();
+            const score = 'loss';
+            const newScore = { name: userName, score: score, date: date};
+            scores.push(newScore);
+            return scores;
 		});
 	} else if (redScore === 0) {
 		document.querySelector(".overlay").style.visibility = "visible";
@@ -456,6 +462,12 @@ const checkForWinner = () => {
 			'<p>GAME OVER! <br><span style="color: black">BLACK</span> WINS!</p><button class="reload">Play Again!</button>';
 		document.querySelector(".reload").addEventListener("click", () => {
 			window.location.reload(true);
+            localStorage.getItem('userName') ?? 'Mystery player';
+            const date = new Date().toLocaleDateString();
+            const score = 'win';
+            const newScore = { name: userName, score: score, date: date};
+            scores.push(newScore);
+            return scores;
 		});
 	}
 
@@ -474,3 +486,4 @@ const changeTurns = () => {
 };
 
 givePiecesEventListeners();
+
