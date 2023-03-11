@@ -105,3 +105,57 @@ const givePiecesEventListeners = () => {
 		}
 	}
 };
+
+const getPlayerPieces = () => {
+	if (turn) {
+		playerPieces = redsPieces;
+	} else {
+		playerPieces = blacksPieces;
+	}
+	removeCellOnClick();
+	resetBorders();
+};
+
+const removeCellOnClick = () => {
+	for (let i = 0; i < cells.length; i++) {
+		cells[i].removeAttribute("onclick");
+	}
+};
+const resetBorders = () => {
+	for (let i = 0; i < playerPieces.length; i++) {
+		playerPieces[i].style.border = "none";
+	}
+	resetSelectedPieceProperties();
+	getSelectedPiece();
+};
+
+const resetSelectedPieceProperties = () => {
+	selectedPiece.pieceId = -1;
+	selectedPiece.pieceId = -1;
+	selectedPiece.isKing = false;
+	selectedPiece.seventhSpace = false;
+	selectedPiece.ninthSpace = false;
+	selectedPiece.fourteenthSpace = false;
+	selectedPiece.eighteenthSpace = false;
+	selectedPiece.minusSeventhSpace = false;
+	selectedPiece.minusNinthSpace = false;
+	selectedPiece.minusFourteenthSpace = false;
+	selectedPiece.minusEighteenthSpace = false;
+};
+
+const getSelectedPiece = () => {
+	selectedPiece.pieceId = parseInt(event.target.id);
+	selectedPiece.indexOfBoardPiece = findPiece(selectedPiece.pieceId);
+	isPieceKing();
+};
+
+const isPieceKing = () => {
+	if (
+		document.getElementById(selectedPiece.pieceId).classList.contains("king")
+	) {
+		selectedPiece.isKing = true;
+	} else {
+		selectedPiece.isKing = false;
+	}
+	getAvailableSpaces();
+};
