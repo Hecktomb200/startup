@@ -41,3 +41,6 @@ The final point of this project that wasn't the most satisfying was whether or n
 
 # 3/22/23: Simon service
 Setting up this system was both great and terrible for me, somehow simultaneously. This is partly what I had been grumbling about last time, and getting to do it now both makes me happy and a little frustrated that I tried for so long to get it to work. Either way, I'm excited to apply this to the startup and get the scores to actually save themselves and display for everyone!
+
+# 3/24/23: Simon Database
+By far the most difficult part of making a database for Simon was the actual setup of the environment. Getting both production and development environment setup with variables for some reason was difficult only because I couldn't for the life of me remember how to SSH into the server itself. Thankfully when I figured that out it overall became doable. I enjoyed looking over the database.js code, and I'm curious to further look into the new code on the frontend js to see how this applies and what I could do to apply this to my own startup.
