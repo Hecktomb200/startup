@@ -44,3 +44,6 @@ Setting up this system was both great and terrible for me, somehow simultaneousl
 
 # 3/24/23: Simon Database
 By far the most difficult part of making a database for Simon was the actual setup of the environment. Getting both production and development environment setup with variables for some reason was difficult only because I couldn't for the life of me remember how to SSH into the server itself. Thankfully when I figured that out it overall became doable. I enjoyed looking over the database.js code, and I'm curious to further look into the new code on the frontend js to see how this applies and what I could do to apply this to my own startup.
+
+# 3/27/23: Simon Login
+This was absolutely fascinating to see function and work within the code, and on the server itself. It feels so simple, yet somehow I know I might easily mess this up. In a way it makes sense; a lot of the setup for this to work was done before. I'll have to make some adjustments to my present code, but I'm certain that I can make this work one way or another within my startup.
