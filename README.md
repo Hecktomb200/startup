@@ -47,3 +47,6 @@ By far the most difficult part of making a database for Simon was the actual set
 
 # 3/27/23: Simon Login
 This was absolutely fascinating to see function and work within the code, and on the server itself. It feels so simple, yet somehow I know I might easily mess this up. In a way it makes sense; a lot of the setup for this to work was done before. I'll have to make some adjustments to my present code, but I'm certain that I can make this work one way or another within my startup.
+
+# 3/29/23: Simon Websocket
+For the first time I am genuinely concerned whether or not I will be able to properly implement this into my startup. Applying this system to the checkers game, epsecially if it's 2-player, is going to be rather interesting to accomplish. I know I'll be able to get some help on it, and I know it's possible, but just imagining how much help I'm going to have to get already sounds heavy. With any luck though, it will be a truly fantastic result!
