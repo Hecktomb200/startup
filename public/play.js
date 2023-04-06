@@ -1,3 +1,46 @@
+const GameEndEvent = 'gameEnd';
+const GameStartEvent = 'gameStart';
+
+class Game {
+	getPlayerName() {
+		return localStorage.getItem('userName') ?? 'Mystery player';
+	  }
+
+	  configureWebSocket() {
+		const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+		this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+		this.socket.onopen = (event) => {
+		  this.displayMsg('system', 'game', 'connected');
+		};
+		this.socket.onclose = (event) => {
+		  this.displayMsg('system', 'game', 'disconnected');
+		};
+		this.socket.onmessage = async (event) => {
+		  const msg = JSON.parse(await event.data.text());
+		  if (msg.type === GameEndEvent) {
+			this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
+		  } else if (msg.type === GameStartEvent) {
+			this.displayMsg('player', msg.from, `started a new game`);
+		  }
+		};
+	  }
+	
+	  displayMsg(cls, from, msg) {
+		const chatText = document.querySelector('#player-messages');
+		chatText.innerHTML =
+		  `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+	  }
+	
+	  broadcastEvent(from, type, value) {
+		const event = {
+		  from: from,
+		  type: type,
+		  value: value,
+		};
+		this.socket.send(JSON.stringify(event));
+	  }
+}
+
 const board = [
 	null,
 	0,
@@ -79,6 +122,7 @@ let turn = true;
 let redScore = 12;
 let blackScore = 12;
 let playerPieces;
+this.broadcastEvent(this.getPlayerName(), GameStartEvent, {});
 
 let selectedPiece = {
 	pieceId: -1,
@@ -447,6 +491,7 @@ const checkForWinner = (score) => {
 		gameOverText.innerHTML =
 			'<p>GAME OVER! <br><span style="color: red">RED</span> WINS!</p><button class="reload">Play Again!</button>';
 		document.querySelector(".overlay").style.visibility = "visible";
+		this.broadcastEvent(userName, GameEndEvent, newScore);
 		document.querySelector(".reload").addEventListener("click", () => {
 			window.location.reload(true);
             const userName = localStorage.getItem('userName') ?? 'Mystery player';
@@ -465,6 +510,7 @@ const checkForWinner = (score) => {
 		document.querySelector(".overlay").style.visibility = "visible";
 		gameOverText.innerHTML =
 			'<p>GAME OVER! <br><span style="color: black">BLACK</span> WINS!</p><button class="reload">Play Again!</button>';
+			this.broadcastEvent(userName, GameEndEvent, newScore);
 		document.querySelector(".reload").addEventListener("click", () => {
 			window.location.reload(true);
             localStorage.getItem('userName') ?? 'Mystery player';
